@@ -19,7 +19,7 @@ function ApplicationForm() {
         birth_date: null,
         dob: "",
         age: "",
-        password:"",
+        password: "",
         school_name: "",
         linkedinProfile: "",
         ClimbingExperience: "",
@@ -110,14 +110,14 @@ function ApplicationForm() {
         // const formError = validationForm();
         // if (Object.keys(formError).length === 0) {
         dispatch(applicationRegister(formData));
-     
+
         // } else {
         //     setError(formError);
         // }
     };
 
     return (
-        <div className="container max-w-[1000px] mx-auto px-4 lg:px-8">
+        <div className="container max-w-[1000px] mx-auto px-4 lg:px-8 outfit">
 
             <form onSubmit={handleSubmit} className="bg-white   font-semibold rounded-lg    ">
                 <span className=" ">
@@ -126,8 +126,8 @@ function ApplicationForm() {
                         <span className="text-lg py-2"> Go Back</span>
                     </Link>
                 </span>
-                <h1 className="text-2xl font-bold text-center mb-4 "> Application Form </h1>
-                <p className=' text-center  mb-8 lg:w-[605px] m-auto   '>Dive into your ScholarAthLead adventure! Fill out our application form,
+                <h1 className="text-2xl text-center mb-4 outfit " > Application Form </h1>
+                <p className=' text-center  mb-8 lg:w-[605px] m-auto   font-normal' >Dive into your ScholarAthLead adventure! Fill out our application form,
                     which helps us tailor our coaching and support to each athlete's unique background and needs.</p>
                 <div className=" ">
                     <div className=' '>
@@ -362,8 +362,8 @@ function ApplicationForm() {
 
                 <button type='submit'
                     // disabled={!formData.parent_name || !formData.email || !formData.dob}
-                    className={`py-3 px-3 rounded-xl bg-gray-500 hover:bg-gray-600 w-full text-white disabled:opacity-40 ${formData ? "bg-red-500 hover:bg-red-600  text-white" : ""}`}>
-                    Submit
+                    className={`w-full py-4 rounded-lg bg-gray-400 text-gray-200 ${formData ? "bg-red-500 hover:bg-red-600  text-white" : ""}`}>
+                    SUBMIT APPLICATION
                 </button>
 
 

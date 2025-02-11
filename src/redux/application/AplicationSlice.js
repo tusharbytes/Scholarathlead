@@ -28,7 +28,12 @@ const applicationSlice = createSlice({
         loading: false,
         error: null,
     },
-    reducers: {},
+    reducers: {
+        setApplication: (state, action) => {
+            console.log(state, "state")
+            console.log(action, "actions")
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(applicationRegister.pending, (state) => {
@@ -36,8 +41,7 @@ const applicationSlice = createSlice({
                 state.error = null;
             })
             .addCase(applicationRegister.fulfilled, (state, action) => {
-                console.log(state, "state");
-                console.log(action, "action");
+
                 state.loading = false;
                 state.applicationForm = action.payload;
             })
@@ -47,5 +51,5 @@ const applicationSlice = createSlice({
             });
     },
 });
-
+export const { setApplication } = applicationSlice.actions
 export default applicationSlice.reducer;
