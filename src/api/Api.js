@@ -26,4 +26,33 @@ export const verifyOTP = async (payload) => {
     }
 }
 
+export const userDelete = async (id) => {
+    console.log(id, "id")
+    try {
+        const response = await axios.delete(`${url}delete-user/${id}`, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        })
+        return response
+    } catch (error) {
+
+        return { error: error.response?.data || "Something went wrong" };
+    }
+}
+
+export const createCustomer = async (id) => {
+
+    try {
+        const response = await axios.delete(`${url}create-customer`, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        })
+        return response
+    } catch (error) {
+
+        return { error: error.response?.data || "Something went wrong" };
+    }
+}
 
