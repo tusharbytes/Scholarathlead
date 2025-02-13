@@ -2,18 +2,19 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
+import CreateCustomer from "../components/createCustomer/CreateCustomer";
+import StripeCheckout from "react-stripe-checkout";
 
-const apiUrl = process.env.REACT_APP_STRIPE_URL;
-console.log(apiUrl, "URL");
-console.log(process.env.REACT_APP_STRIPE_URL);  // Must match exactly
-
-
-
+// console.log(apiUrl, "URL");
+// console.log(process.env.REACT_APP_STRIPE_URL);  // Must match exactly
 
 
+
+
+const token = localStorage.getItem("token")
 const Dashboard = () => {
 
- 
+  const [createCustomerModel, setCreateCustomerModel] = useState(false)
 
 
   const [userName, setUserName] = useState({})
@@ -25,6 +26,7 @@ const Dashboard = () => {
 
     }
   }
+  
   useEffect(() => {
 
     getProfile()
@@ -39,9 +41,11 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex-1 p-6">
         <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
-        <button className="mt-2 bg-red-600 text-white border hover:border-red-500 hover:bg-white hover:text-red-500 cursor-pointer px-4 py-4 rounded-xl">Create Customer</button>
+        <p
+          className="mt-2   text-center     px-4 py-4 rounded-xl">Add Customer</p>
 
-        {/* Example Content */}
+        <CreateCustomer isOpen={createCustomerModel} onClose={() => setCreateCustomerModel(false)} />
+
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-white p-4 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold text-gray-700">Card 1</h2>
@@ -56,6 +60,10 @@ const Dashboard = () => {
             <p className="text-gray-500">Some details here.</p>
           </div>
         </div>
+      
+
+
+
       </div>
     </div>
   );
