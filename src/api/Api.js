@@ -4,7 +4,7 @@ const url = "http://localhost:3001/api/user/"
 const token = localStorage.getItem("token")
 export const generateOTP = async (payload) => {
     try {
-        const response = await axios.post(`${url}generate-otp`, payload)
+        const response = await axios.post(`${url}generate-otp`,     payload)
         console.log(response, "responsefdaaf")
     } catch (error) {
         console.log(error)

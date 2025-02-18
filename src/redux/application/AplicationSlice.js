@@ -11,7 +11,7 @@ export const applicationRegister = createAsyncThunk(
         try {
             const response = await axios.post(`http://localhost:3001/api/user/submit-form`, formData);
             console.log(response.data, "response");
-            return response.data;
+                return response.data;
         } catch (error) {
             console.log(error);
             return rejectWithValue(error.response?.data || "Something went wrong");

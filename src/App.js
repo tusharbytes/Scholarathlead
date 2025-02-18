@@ -15,7 +15,7 @@ const stripePromise = loadStripe("pk_test_51QrdyK08yFVxPUE62v6HooTeWZMJaMabvv6iD
 
 function App() {
   return (
-<Elements stripe={stripePromise}>
+    <Elements stripe={stripePromise}>
 
 
       <Routes>
@@ -25,11 +25,8 @@ function App() {
         <Route path='/register' element={<Register />} ></Route>
         <Route path='/profile' element={<Profile />} ></Route>
         <Route path='/forms' element={<AllForms />} ></Route>
-
-
-
+        <Route path='/makepayment' element={<AllForms />} ></Route>
         <Route path='/dashboard' element={<Dashboard />} ></Route>
-
       </Routes>
     </Elements>
   )

@@ -8,7 +8,6 @@ import { applicationRegister } from '../redux/application/AplicationSlice'
 function ApplicationForm() {
     const [formData, setFromData] = useState({
         parent_name_prefix: " ",
-        // parent_name_prefix: null,
         parent_name: "",
         student_name_prefix: "",
         parent_phone: "",
