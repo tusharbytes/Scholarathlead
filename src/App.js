@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import AllForms from './pages/AllForms';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import Packages from './pages/Packages';
 
 const stripePromise = loadStripe("pk_test_51QrdyK08yFVxPUE62v6HooTeWZMJaMabvv6iDx7EpCxsx7AOPJVDMYFfGOkIh7GcsAF8PgSH9ut0wqy3dubcZ7VL00apQb6LeX");
 
@@ -27,6 +28,8 @@ function App() {
         <Route path='/forms' element={<AllForms />} ></Route>
         <Route path='/makepayment' element={<AllForms />} ></Route>
         <Route path='/dashboard' element={<Dashboard />} ></Route>
+        <Route path='/package' element={<Packages />} ></Route>
+
       </Routes>
     </Elements>
   )
